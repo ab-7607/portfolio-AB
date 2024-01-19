@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Portfolio for web development</title>
+<link rel="stylesheet" href="portfolio.css">
+<script src="https://kit.fontawesome.com/f2f0c3718a.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div id="header">
+  <div class=" content">
+   <h3> Portfolio.</h3>
+    <ul class="side-bar">
+      <li><a href="#header">Home</a> </li>
+      <li> <a href="#About">About</a></li>
+      <li><a href="#my-skill">Skill</a></li>
+      <li> <a href="#sub-title">Services</a></li>
+            <li><a href="#contact-me">Contact</a></li>
+            <i class="fa-regular fa-circle-xmark" onclick="closeMenu()"></i>
+          </ul>
+            <i class="fa-sharp fa-solid fa-bars" onclick="openMenu()"></i>
+ 
+            </div>
+        </div>
+
+<div class="description">
+  <h3 class="description-sub"> <span> Hello </span>its me </h3>
+  <h2 class="description-sub"> Abrehet <span>Aregay</span> </h2>
+  <h2 class="description-sub">  junior Front end developer  <br>and  Electrical Engineer</h2>
+</div>
+<div class="introduction ">
+<div class="intro-About">
+ <img src="img/abrehet.jpg" alt="">
+</div>
+  <div class="Education">
+    <h2 id="About">About Me</h2>
+    My name is Abrehet Aregay.  I am recently graduated from Gondar University by
+     Electrical and computer engineering I am young, passionate, dedicated and energetic graduate who is eager to get a job and be committed to
+     accomplish all duties interested to with honesty. 
+   </div>
+</div>
+
+ 
+ <!--service-->
+<h2 id="sub-title">My Services</h2>
+<div class="service-list">
+<div class="web-design">
+  <i class="fa-solid fa-code"></i>
+  <h3> Web Design</h3>
+  <p>Designing web page using <br> HTML,CSS  and Javascript.</p>
+    <a href="#">Learn more</a>
+</div>
+<div class="Home-tutor">
+  <i class="fa-solid fa-building-columns"></i>
+  <h3> Home Tutor</h3>
+  <p>Giving home tutor for <br>Different level of Students.</p>
+  <a href="#">Learn more</a>
+</div>
+</div>
+
+
+
+    <div>
+      <h2 id="my-skill">My skill</h2>
+    </div>
+    <div class="pro-tech">
+    <div class="Technical-skills">
+    <h2> <span>Technical Skills</span></h2>
+    <p> <i class="fa-brands fa-html5"></i> HTML</p>
+    <P>  <i class="fa-brands fa-css3-alt"></i>CSS</P>
+    <P> <i class="fa-brands fa-js"></i>Javascript</P>
+    </div>
+    <div class="professional-skills">
+    <h2> <span>Professional skills </span></h2>
+    <p>Problem Solving</p>
+    <p> Teamwork</p>
+    <p>Communication </p>
+    </div>
+    </div>
+            
+
+<!----Contact--> 
+
+<div class="Contact">
+  <div class="contact-left">
+<h2 id="contact-me"> Contact Me</h2>
+<p><i class="fa-solid fa-share"></i>abrehetaregay4@gmail.com</p>
+<p><i class="fa-solid fa-phone"></i>+251-940-264-358</p>
+<p class="social-media-icons"> 
+<a href="">  <i class="fa-brands fa-linkedin-in"></i></a>
+<a href=""><i class="fa-brands fa-telegram"></i></a>
+<a href=""><i class="fa-brands fa-facebook"></i></a>
+</p>
+
+<div class="butn cv">
+  <a href="img/My-CV.pdf" download><h3>Download CV</h3></a></div> 
+</div>
+
+<div class="contact-right">
+<form name="submit-to-google-sheet">
+  <input type="text" name="Name" placeholder="Your Name" required>
+  <input type="Email" name="Email" placeholder="Your Email" required>
+  <textarea name="Message" id="Message"  rows="6" placeholder="Your Message"></textarea>
+  <button class="submit-btu">Submit</button>
+  </form>
+  <span class="sucessuful"></span>
+  </div>
+</div>
+
+</body>
+
+<script src="portfolio.js"></script>
+
+
+  
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw47qQuYH81LJwIV8cppt--KuLb67t0YLBGpx3Kv-7B5Tx9BfUTLfQGPZbebbWoN5h3/exec'
+  const form = document.forms['submit-to-google-sheet']
+const  status=document.querySelector('.sucessuful')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => status.innerHTML=' sent sucessful!')
+      setTimeout(function(){
+        status.innerHTML='';  
+      },5000)
+      form.reset()
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+</html>
